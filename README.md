@@ -151,3 +151,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 }
 ```
+
+### 위젯과 리소스
+Widgets
+* 위젯: Button, TextView, ImageView 등 화면에 그려지는 디자인 요소
+* attributes은 Code/Design 모두에서 수정 가능
+* Palette
+  - Common: Text, Buttons, Layouts 등 많이 사용되는 위젯 모음
+  - Text: 글자 출력 및 입력 관련 위젯
+  - Buttons: 클릭/터치 관련 이벤트를 처리하는 위젯
+  - Widgets: 이미지, 웹 사이트, 별점 표시, 진행 상태 등의 정보 출력 위젯
