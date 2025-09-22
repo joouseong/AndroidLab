@@ -118,3 +118,36 @@ class MainActivity : AppCompatActivity() {
         Log.e("NullSafeOperator", nullableVar2?.uppercase().toString())
 }
 ```
+
+### 늦은 초기화 lateinit, lazy
+늦은 초기화
+* 객체 초기화를 늦게 하는 것
+* 객체 선언 시 객체 초기화가 어려울 때 null로 선언하지만 null사용을 지양하고 싶을 때
+* 객체 선언 시 초기화할 수 없지만 이후 다른 값들이 정해지면서 초기화해야 할 때
+* lateinit, lazy 사용
+
+lateinit
+* var(변수 선언)에만 사용
+* Primitive Type(Int, Float, Long 등)에는 사용 불가
+* non-null 변수로만 사용 가능
+
+by lazy
+* val(상수 선언)에서 사용 가능
+  - 초기화 후 초기값이 변경되지 않는다면 by lazy를 사용
+* Primitive Type(Int, Float, Long등)에도 사용 가능
+* non-null, nullable 변수 사용 가능
+
+생명주기 함수와 사용될 때
+``` kotlin
+class MainActivity : AppCompatActivity() {
+
+    val binding by lazy{
+        ActivityMainBinding.inflate(layoutInflater)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_main)
+}
+```
